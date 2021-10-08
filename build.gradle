@@ -9,6 +9,7 @@ buildscript {
         kotlin_version = '1.5.31'
         material_design_version = '1.4.0'
         okhttp_version = '3.11.0'
+        picasso_version = '2.71828'
     }
     repositories {
         google()
