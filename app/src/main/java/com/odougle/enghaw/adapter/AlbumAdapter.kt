@@ -34,8 +34,8 @@ class AlbumAdapter(
                 .load(AlbumHttp.BASE_URL + album.cover)
                 .into(imgCover)
 
-            txtTitle?.text = album.title
-            txtYear?.text = album.year.toString()
+            txtTitle.text = album.title
+            txtYear.text = album.year.toString()
         }
     }
 
