@@ -5,16 +5,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.odougle.enghaw.databinding.AlbumListBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlin.coroutines.CoroutineContext
 
-class AlbumListBaseFragment : Fragment(), CoroutineScope {
+abstract class AlbumListBaseFragment : Fragment(), CoroutineScope {
     private lateinit var job: Job
 
     override val coroutineContext: CoroutineContext
         get() = Dispatchers.Main + job
+
+    private var _binding : AlbumListBinding? = null
+    val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +31,8 @@ class AlbumListBaseFragment : Fragment(), CoroutineScope {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.album_list, container, false)
+        _binding = AlbumListBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onDestroy() {
