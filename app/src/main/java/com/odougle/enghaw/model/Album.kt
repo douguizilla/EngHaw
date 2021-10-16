@@ -19,5 +19,5 @@ class Album (
     @SerializedName("formacao")
     val formattion: List<String>,
     @SerializedName("tracks")
-    val tracks: List<String>
+    val tracks: List<String>?
 ) : Parcelable

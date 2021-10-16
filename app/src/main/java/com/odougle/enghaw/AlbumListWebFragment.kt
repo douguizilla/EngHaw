@@ -65,7 +65,9 @@ class AlbumListWebFragment : AlbumListBaseFragment() {
     }
 
     private fun onItemClick(v: View, album: Album, position: Int){
-
+        context?.run {
+            DetailsActivity.start(this, album)
+        }
     }
 
     private fun updateList() {

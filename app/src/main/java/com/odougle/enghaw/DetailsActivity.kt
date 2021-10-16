@@ -62,7 +62,7 @@ class DetailsActivity : AppCompatActivity() {
             }
             txtFormation.text = sb.toString()
             sb = StringBuilder()
-            album.tracks.forEachIndexed { index, track ->
+            album.tracks?.forEachIndexed { index, track ->
                 if(sb.isNotEmpty()) sb.append('\n')
                 sb.append(index + 1).append(". ").append(track)
             }
