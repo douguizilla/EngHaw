@@ -13,6 +13,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".DetailsActivity"
+            android:theme="@style/AppTheme.Translucent"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
