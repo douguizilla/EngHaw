@@ -41,7 +41,9 @@
             android:layout_weight="1"
             android:clipToPadding="false"
             android:scrollbars="vertical">
-            <include layout="@layout/content_details"/>
+            <include
+                android:id="@+id/contentDetails"
+                layout="@layout/content_details"/>
         </androidx.core.widget.NestedScrollView>
     </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
