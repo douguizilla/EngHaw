@@ -12,10 +12,11 @@ import com.squareup.picasso.Picasso
 import java.lang.StringBuilder
 
 class DetailsActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityDetailsBinding
+    private val binding : ActivityDetailsBinding by lazy{
+        ActivityDetailsBinding.inflate(layoutInflater)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val album = intent.getParcelableExtra<Album>(EXTRA_ALBUM)
         if(album != null){
@@ -51,7 +52,7 @@ class DetailsActivity : AppCompatActivity() {
     }
 
     private fun fillFields(album: Album) {
-        binding.contentDetails.apply {
+        binding.contentDetails?.apply {
             txtTitle.text = album.title
             txtYear.text = album.year.toString()
             txtRecordingCompany.text = album.recordingCompany
